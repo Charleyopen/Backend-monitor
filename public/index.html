@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APP 实时流量后台</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="title">APP 实时流量后台</div>
+      <div class="sub">SSE 实时推送 · 最近 60 秒趋势 · 示例项目</div>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <div class="row">
+          <label class="label" for="appId">appId</label>
+          <input id="appId" class="input" value="demo-app" />
+          <button id="connectBtn" class="btn primary">连接</button>
+          <span id="status" class="status">未连接</span>
+        </div>
+
+        <div class="row">
+          <button id="mockStartBtn" class="btn">启动模拟数据</button>
+          <button id="mockStopBtn" class="btn">停止模拟数据</button>
+          <label class="label" for="mockUsers">模拟用户数</label>
+          <input id="mockUsers" class="input small" value="80" />
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <div class="k">活跃用户（近 60s）</div>
+          <div class="v" id="activeUsers">-</div>
+        </div>
+        <div class="card">
+          <div class="k">入流量（bytes/s）</div>
+          <div class="v" id="inBps">-</div>
+        </div>
+        <div class="card">
+          <div class="k">出流量（bytes/s）</div>
+          <div class="v" id="outBps">-</div>
+        </div>
+        <div class="card">
+          <div class="k">累计入/出（bytes）</div>
+          <div class="v2">
+            <span id="totalIn">-</span>
+            <span class="sep">/</span>
+            <span id="totalOut">-</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="row between">
+          <div class="panelTitle">最近 60 秒流量趋势（bytes/s）</div>
+          <div class="legend">
+            <span class="dot in"></span>入
+            <span class="dot out"></span>出
+          </div>
+        </div>
+        <canvas id="chart" width="1100" height="260"></canvas>
+      </section>
+
+      <section class="panel">
+        <div class="row between">
+          <div class="panelTitle">已注册的APK</div>
+          <button id="refreshApkBtn" class="btn small">刷新</button>
+        </div>
+        <div id="apkList" class="apkList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panelTitle">最近更新</div>
+        <pre id="raw" class="raw"></pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
+

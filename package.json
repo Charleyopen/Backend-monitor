@@ -1,0 +1,12 @@
+{
+  "name": "app-traffic-admin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "一个用于查看 APP 用户实时流量的简单后台（无第三方依赖，SSE 实时推送）",
+  "scripts": {
+    "dev": "node ./src/server.js",
+    "start": "node ./src/server.js"
+  }
+}
+
