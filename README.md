@@ -94,9 +94,5 @@ curl -X POST http://localhost:8787/api/apk/register \
 - `GET /api/apk/info?appId=xxx` - 获取指定APK的详细信息
 - `POST /api/apk/register` - 注册新的APK文件
 
-## 你接下来需要决定的点（我可以继续帮你接）
 
-1. “实时流量”你想看什么口径：按请求数/带宽/HTTP 接口维度/运营商/地区？
-2. 数据从哪里来：在 APP 端埋点上报？还是从服务端网关/日志/监控系统转发？
-3. 是否需要落库与历史报表（比如按天/周/月），以及权限登录？
 
